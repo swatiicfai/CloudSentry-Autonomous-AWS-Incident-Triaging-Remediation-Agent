@@ -1,0 +1,538 @@
+{
+ "decider_model": "strands-decider-2b-hobson-v19",
+ "rows": [
+  {
+   "i": 0,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "no"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "yes",
+     "confidence": 0.7627
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.7172
+    }
+   },
+   "decider_ms": 3188.84670000989,
+   "decider_server_ms": 2510.5
+  },
+  {
+   "i": 1,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "yes"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "no",
+     "confidence": 0.5309
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.9112
+    }
+   },
+   "decider_ms": 3065.0652000913396,
+   "decider_server_ms": 2249.5
+  },
+  {
+   "i": 2,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "no"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "no",
+     "confidence": 0.5711
+    },
+    "explicit_instruction": {
+     "label": "no",
+     "confidence": 0.6469
+    }
+   },
+   "decider_ms": 2739.8139000870287,
+   "decider_server_ms": 2086.4
+  },
+  {
+   "i": 3,
+   "expected": {
+    "args_grounded": "no",
+    "explicit_instruction": "yes"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "no",
+     "confidence": 0.6413
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.8487
+    }
+   },
+   "decider_ms": 2538.221599999815,
+   "decider_server_ms": 2021.3
+  },
+  {
+   "i": 4,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "yes"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "yes",
+     "confidence": 0.7119
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.9069
+    }
+   },
+   "decider_ms": 2644.001299981028,
+   "decider_server_ms": 2002.2
+  },
+  {
+   "i": 5,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "no"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "yes",
+     "confidence": 0.6658
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.6077
+    }
+   },
+   "decider_ms": 2823.524799896404,
+   "decider_server_ms": 2193.8
+  },
+  {
+   "i": 6,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "yes"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "yes",
+     "confidence": 0.7308
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.8044
+    }
+   },
+   "decider_ms": 4721.587799955159,
+   "decider_server_ms": 2040.3
+  },
+  {
+   "i": 7,
+   "expected": {
+    "args_grounded": "no",
+    "explicit_instruction": "no"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "no",
+     "confidence": 0.5318
+    },
+    "explicit_instruction": {
+     "label": "no",
+     "confidence": 0.6189
+    }
+   },
+   "decider_ms": 2643.857599934563,
+   "decider_server_ms": 2058.5
+  },
+  {
+   "i": 8,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "yes"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "yes",
+     "confidence": 0.654
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.8451
+    }
+   },
+   "decider_ms": 2566.857900004834,
+   "decider_server_ms": 2008.4
+  },
+  {
+   "i": 9,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "no"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "yes",
+     "confidence": 0.5056
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.5536
+    }
+   },
+   "decider_ms": 2634.95000009425,
+   "decider_server_ms": 2176.3
+  },
+  {
+   "i": 10,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "yes"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "yes",
+     "confidence": 0.6414
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.9315
+    }
+   },
+   "decider_ms": 2613.405599957332,
+   "decider_server_ms": 2041.1
+  },
+  {
+   "i": 11,
+   "expected": {
+    "args_grounded": "no",
+    "explicit_instruction": "no"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "no",
+     "confidence": 0.6126
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.5736
+    }
+   },
+   "decider_ms": 2529.620400047861,
+   "decider_server_ms": 2012.0
+  },
+  {
+   "i": 12,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "yes"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "yes",
+     "confidence": 0.7597
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.9009
+    }
+   },
+   "decider_ms": 2729.227100033313,
+   "decider_server_ms": 2205.2
+  },
+  {
+   "i": 13,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "no"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "yes",
+     "confidence": 0.5774
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.8077
+    }
+   },
+   "decider_ms": 3937.808600021526,
+   "decider_server_ms": 2163.2
+  },
+  {
+   "i": 14,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "yes"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "yes",
+     "confidence": 0.7226
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.8227
+    }
+   },
+   "decider_ms": 2584.86579998862,
+   "decider_server_ms": 2046.7
+  },
+  {
+   "i": 15,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "no"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "no",
+     "confidence": 0.532
+    },
+    "explicit_instruction": {
+     "label": "no",
+     "confidence": 0.5816
+    }
+   },
+   "decider_ms": 2536.405500024557,
+   "decider_server_ms": 2031.9
+  },
+  {
+   "i": 16,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "yes"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "yes",
+     "confidence": 0.6962
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.8439
+    }
+   },
+   "decider_ms": 2761.7539000930265,
+   "decider_server_ms": 2144.8
+  },
+  {
+   "i": 17,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "no"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "no",
+     "confidence": 0.6086
+    },
+    "explicit_instruction": {
+     "label": "no",
+     "confidence": 0.5974
+    }
+   },
+   "decider_ms": 2720.2487000031397,
+   "decider_server_ms": 2168.2
+  },
+  {
+   "i": 18,
+   "expected": {
+    "args_grounded": "no",
+    "explicit_instruction": "yes"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "no",
+     "confidence": 0.5769
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.9009
+    }
+   },
+   "decider_ms": 2429.49609993957,
+   "decider_server_ms": 1955.4
+  },
+  {
+   "i": 19,
+   "expected": {
+    "args_grounded": "no",
+    "explicit_instruction": "no"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "no",
+     "confidence": 0.5934
+    },
+    "explicit_instruction": {
+     "label": "no",
+     "confidence": 0.5543
+    }
+   },
+   "decider_ms": 2526.8018000060692,
+   "decider_server_ms": 2002.6
+  },
+  {
+   "i": 20,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "yes"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "yes",
+     "confidence": 0.6381
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.8987
+    }
+   },
+   "decider_ms": 3826.571200042963,
+   "decider_server_ms": 3364.0
+  },
+  {
+   "i": 21,
+   "expected": {
+    "args_grounded": "no",
+    "explicit_instruction": "no"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "no",
+     "confidence": 0.5494
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.5722
+    }
+   },
+   "decider_ms": 2571.84230000712,
+   "decider_server_ms": 2027.7
+  },
+  {
+   "i": 22,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "yes"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "yes",
+     "confidence": 0.6835
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.7836
+    }
+   },
+   "decider_ms": 2794.590500066988,
+   "decider_server_ms": 2212.2
+  },
+  {
+   "i": 23,
+   "expected": {
+    "args_grounded": "no",
+    "explicit_instruction": "no"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "yes",
+     "confidence": 0.5061
+    },
+    "explicit_instruction": {
+     "label": "no",
+     "confidence": 0.6167
+    }
+   },
+   "decider_ms": 3569.5879000704736,
+   "decider_server_ms": 2031.7
+  },
+  {
+   "i": 24,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "yes"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "yes",
+     "confidence": 0.7473
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.9031
+    }
+   },
+   "decider_ms": 2706.307499902323,
+   "decider_server_ms": 2190.5
+  },
+  {
+   "i": 25,
+   "expected": {
+    "args_grounded": "yes",
+    "explicit_instruction": "no"
+   },
+   "decider": {
+    "args_grounded": {
+     "label": "yes",
+     "confidence": 0.5761
+    },
+    "explicit_instruction": {
+     "label": "yes",
+     "confidence": 0.7408
+    }
+   },
+   "decider_ms": 2702.4089000187814,
+   "decider_server_ms": 2157.4
+  }
+ ],
+ "summary": {
+  "decider": {
+   "accuracy": 0.7692,
+   "decisions": 52,
+   "per_question": {
+    "args_grounded": 0.8077,
+    "explicit_instruction": 0.7308
+   },
+   "latency_p50_ms": 2706.3,
+   "latency_p95_ms": 3937.8,
+   "usd_per_1k_decisions": 0.035,
+   "confident_share": 0.4231,
+   "accuracy_when_confident": 0.8636,
+   "sent_to_human_at_threshold": 30
+  },
+  "llm": {
+   "accuracy": 0.8077,
+   "decisions": 52,
+   "per_question": {
+    "args_grounded": 0.8462,
+    "explicit_instruction": 0.7692
+   },
+   "latency_p50_ms": 4150.0,
+   "latency_p95_ms": 6200.0,
+   "usd_per_1k_decisions": 4.0,
+   "confident_share": 0.6538,
+   "accuracy_when_confident": 0.8824,
+   "sent_to_human_at_threshold": 18
+  },
+  "speedup_p50": 1.53
+ },
+ "threshold": 0.7,
+ "llm_model": "us.amazon.nova-pro-v1:0",
+ "llm_provider": "ugmdu",
+ "llm_where": null,
+ "decider_url": "https://da25tnxy06gjk.cloudfront.net",
+ "decider_mode": "ugmdu",
+ "ran_at": 1792776482.0713122,
+ "split": "all"
+}

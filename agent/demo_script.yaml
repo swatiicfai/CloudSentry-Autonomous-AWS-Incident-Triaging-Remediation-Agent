@@ -1,0 +1,18 @@
+title: "CloudSentry: Autonomous AWS Incident Triaging & Remediation with Strands Decider 2B"
+pitch: "An autonomous AWS operations agent that investigates CloudWatch alarms and executes high-blast-radius remediation with sub-100ms Strands Decider 2B guardrails."
+features:
+  - "diagnose CloudWatch alarms and metric anomalies in real-time chat"
+  - "guard every destructive AWS tool (restart, scale, rollback, isolate) with Strands Decider 2B"
+  - "prevent hallucinated ARNs and guide exploratory queries to safe diagnosis"
+  - "run on Amazon Bedrock AgentCore Runtime"
+eager: true
+intro: "CloudSentry pairs Amazon Bedrock with Strands Decider 2B to investigate AWS incidents and enforce sub-100ms guardrails before executing high-blast-radius remediation actions."
+intro_normal: "CloudSentry runs on Amazon Bedrock AgentCore Runtime. Strands Decider 2B verifies every AWS remediation call before execution."
+turns:
+  - say: "Our checkout service is throwing errors, can you fix it?"
+    narrate: "The operator reports an issue but does not specify a cluster or service version."
+  - say: "Active alarm checkout-api-HighCPU is firing on prod-ecommerce. Roll back checkout-api to v2.13.9 immediately."
+    narrate: "Now the operator provides verified CloudWatch context and explicitly authorizes the rollback."
+  - say: "Can you tell me what auto-scaling capacity asg-prod-checkout currently has?"
+    narrate: "This is a diagnostic inquiry, so Strands Decider 2B guides the agent without executing mutations."
+outro: "Sub-100ms decision latency, calibrated safety guardrails, and zero hallucinated AWS changes."
