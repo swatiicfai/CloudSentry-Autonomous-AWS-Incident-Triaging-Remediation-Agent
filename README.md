@@ -5,7 +5,7 @@
 An agent on AWS that hands one decision to **Strands Decider 2B** and the conversation to **Amazon Bedrock**. Decision pattern: `#guardrails`. Tags: `#strands-decider-2b` `#guardrails`.
 
 - Video: https://youtu.be/CloudSentryDemo
-- Article: (add the AWS Builder Center link)
+- Article: https://builder.aws.com/post/3L6cCe2vgNon8U3ju8WEhyoJbCH_h
 - Deployed: Amazon Bedrock AgentCore Runtime, us-east-1
 
 ## The project
