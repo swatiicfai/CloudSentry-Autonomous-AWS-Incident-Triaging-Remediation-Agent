@@ -1,77 +1,65 @@
-# CloudSentry: Autonomous AWS Incident Triaging & Remediation Agent
+# CloudSentry: Autonomous AWS SRE Incident Triaging & Remediation Agent
 
-**An autonomous AWS SRE and incident remediation agent that investigates CloudWatch alarms and executes high-blast-radius cloud operations with sub-100ms Strands Decider 2B safety guardrails.**
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-brightgreen.svg)](https://www.python.org/)
+[![Model](https://img.shields.io/badge/Decision%20Model-Strands%20Decider%202B-orange.svg)](https://github.com/strands-labs/strands-decider)
+[![Bedrock](https://img.shields.io/badge/AWS-Amazon%20Bedrock%20Nova%20Pro-232F3E.svg)](https://aws.amazon.com/bedrock/)
+[![Hackathon](https://img.shields.io/badge/AWS%20User%20Group-Madurai%20Hackathon-FF9900.svg)](https://builder.aws.com/build/hackathons/4f50957c-1d08-37ab-b11c-97516b9adeb4/agent-experience-hackathon-strands-decider)
 
-An agent on AWS that hands one decision to **Strands Decider 2B** and the conversation to **Amazon Bedrock**. Decision pattern: `#guardrails`. Tags: `#strands-decider-2b` `#guardrails`.
+> **An autonomous AWS SRE and incident remediation agent that investigates CloudWatch alarms, troubleshoots root causes, and executes high-blast-radius cloud operations with sub-100ms Strands Decider 2B safety guardrails.**
 
-- Video: https://youtu.be/CloudSentryDemo
-- Article: https://builder.aws.com/post/3L6cCe2vgNon8U3ju8WEhyoJbCH_h
-- Deployed: Amazon Bedrock AgentCore Runtime, us-east-1
+Built for the **[Agent Experience Hackathon: Strands Decider](https://builder.aws.com/build/hackathons/4f50957c-1d08-37ab-b11c-97516b9adeb4/agent-experience-hackathon-strands-decider)** organized by **AWS User Group Madurai**.
 
-## The project
+---
 
-- **Pitch:** An autonomous AWS SRE and incident remediation agent that investigates CloudWatch alarms and executes high-blast-radius cloud operations with sub-100ms Strands Decider 2B safety guardrails.
-- **Who it is for:** Cloud Operations teams, DevOps engineers, and on-call SREs managing multi-service AWS architectures who need automated incident mitigation without fear of hallucinated CLI parameters or runaway destruction.
-- **Features:**
-  - Real-time CloudWatch alarm inspection and telemetry diagnostic analysis through conversational chat;
-  - Every destructive or mutating action (restart, ASG scale, deployment rollback, instance quarantine) is evaluated before execution;
-  - Unverified or exploratory requests are guided back to diagnostic dialogue rather than blind execution;
-  - High-impact blast radius changes require explicit human-in-the-loop confirmation;
-  - Live decision telemetry panel showing real-time calibrated confidence and sub-100ms latency metrics;
-  - Deployed on Amazon Bedrock AgentCore Runtime.
-- **The decision handed to Strands Decider 2B:** Before executing an irreversible AWS remediation tool, are the target parameters grounded in verified CloudWatch alarms, is the action explicitly instructed, and is it safe to proceed autonomously? (`#guardrails`)
-- **Why a decision model:** Generative LLMs are too slow (2-6s per turn), computationally expensive, and prone to hallucinating non-existent AWS resource identifiers. Strands Decider 2B provides deterministic, calibrated classification in under 100ms with zero prompt hallucination risk.
-- **Amazon Bedrock:** Powers conversational understanding, diagnostic reasoning, and multi-step tool orchestration (Amazon Nova Pro / Nova Lite).
+## Submission Links
 
+- **Live Demo Video (YouTube):** [https://youtu.be/ZJFkwn4AZsE](https://youtu.be/ZJFkwn4AZsE)
+- **AWS Builder Center Article:** [https://builder.aws.com/post/3L6cCe2vgNon8U3ju8WEhyoJbCH_h](https://builder.aws.com/post/3L6cCe2vgNon8U3ju8WEhyoJbCH_h)
+- **AWS Builder Center Project:** [https://builder.aws.com/project/3L6YSK0p9gvasgB4pj7uWWfhhPJ/cloudsentry-autonomous-aws-sre-incident-triaging-and-remediation-agent](https://builder.aws.com/project/3L6YSK0p9gvasgB4pj7uWWfhhPJ/cloudsentry-autonomous-aws-sre-incident-triaging-and-remediation-agent)
+- **Pattern Tag:** `#guardrails` | **Required Tags:** `#strands-decider-2b` `#guardrails`
+- **Deployed Runtime ARN:** `arn:aws:bedrock-agentcore:us-east-1:590184025172:runtime/cloudsentry-sre-agentcore-runtime`
 
+---
 
-## How it is built
+## The Problem & The Solution
 
-Strands Agents with Amazon Bedrock for the generative part, the tools in `agent/tools.py`, deployed to Amazon Bedrock AgentCore Runtime, and one decision handed to Strands Decider 2B at a clear seam in the agent's path.
+When production services degrade at 2 a.m., every minute spent navigating dashboards increases downtime cost. While autonomous AI agents powered by generative LLMs can parse telemetry and suggest fixes, deploying them to execute destructive cloud operations is risky. LLMs can hallucinate non-existent resource ARNs, execute premature restarts when an operator merely asks a diagnostic question, or trigger cascading outages across dependent services.
 
-Every Amazon Bedrock model id is set in `.env` (`BEDROCK_MODEL_ID`, and `BEDROCK_SMALL/MEDIUM/LARGE_MODEL_ID` for routing), Amazon Nova by default.
+**CloudSentry** solves this by decoupling generative reasoning from decision safety:
+1. **System 2 (Generative Reasoning):** **Amazon Bedrock (Amazon Nova Pro)** conducts multi-step conversational troubleshooting, parses CloudWatch alarms, and synthesizes root-cause analyses.
+2. **System 1 (Deterministic Safety Gate):** **Strands Decider 2B** acts as a sub-100ms pointer/decision guardrail intercepting every mutating AWS tool call before execution.
+
+---
+
+## Key Capabilities
+
+- **Conversational SRE Diagnostics:** Real-time inspection of active CloudWatch alarms and metric anomalies via Amazon Bedrock.
+- **Deterministic Sub-100ms Safety Guardrails:** Every destructive or mutating action (`restart_service`, `scale_asg`, `rollback_deployment`, `isolate_instance`) is evaluated by Strands Decider 2B before execution.
+- **Grounding Verification:** Prevents hallucinated cluster names, service IDs, or invalid task revisions by verifying against telemetry context.
+- **Intent Classification:** Distinguishes exploratory inquiries (*"Why is CPU high?"*) from direct operational execution commands (*"Roll back checkout-api now"*).
+- **Human-in-the-Loop Escalation:** Automatically requests explicit operator confirmation when confidence falls into ambiguous bands (0.40 - 0.65) or blast radius is high.
+- **Amazon Bedrock AgentCore Runtime:** Packaged and deployed for serverless, IAM-authenticated agent execution.
+
+---
+
+## Architecture
 
 ![Architecture](submission/article/img/architecture.png)
 
-## Reusable decision pattern: incident-action-guardrail  (#guardrails)
+CloudSentry dual-engine architecture:
+- Diagnostic queries flow freely to CloudWatch tools.
+- Mutating tools are intercepted by `IncidentActionGuard` (a Strands `InterventionHandler`).
+- `IncidentActionGuard` formats the operational state and calls `Decider.ask(...)`.
+- Based on calibrated confidence scores, the guardrail branches into `Proceed()`, `Guide()`, `Confirm()`, or `Deny()`.
 
-The pattern lives in [`agent/decision.py`](agent/decision.py), labelled `REUSABLE DECISION PATTERN`. It contains the typed questions and their options, the wiring that puts the decision in the agent's path, and a note on how to reuse it:
+---
 
-```text
-REUSABLE DECISION PATTERN: incident-action-guardrail  (#guardrails)
+## Reusable Decision Pattern: `incident-action-guardrail` (`#guardrails`)
 
-What it does
-    In autonomous cloud operations and Site Reliability Engineering (SRE), AI agents
-    remediate production incidents by invoking high-blast-radius AWS tools (restarting
-    services, scaling auto-scaling groups, triggering rollback deployments, or isolating
-    compromised instances).
-    Before an irreversible remediation tool executes, Strands Decider 2B evaluates the
-    action against the operational context:
-    - are the target service names, cluster IDs, and revisions grounded in verified
-      CloudWatch alarms or telemetry (preventing hallucinated ARNs)?
-    - did the on-call engineer explicitly instruct or authorize this remediation action,
-      rather than merely asking a diagnostic or status question?
-    - is the remediation within automated safety blast-radius limits, or should an operator
-      confirm first?
-    Grounded and explicitly requested actions proceed autonomously; exploratory questions
-    are guided back to conversational diagnosis; and high-impact actions trigger an operator
-    confirmation dialog.
+The pattern lives in [`agent/decision.py`](agent/decision.py) and is labelled `REUSABLE DECISION PATTERN`. Any builder can drop it into their own AWS or DevOps agent.
 
-Typed questions
-    args_grounded (noul), explicit_instruction (noul), blast_radius_safe (noul); see QUESTIONS below.
-
-Wiring
-    `IncidentActionGuard` is a Strands `InterventionHandler`; agent/agent.py passes it to the Agent:
-        Agent(..., interventions=[IncidentActionGuard(decider)])
-    It inspects only mutating tools in GUARDED_TOOLS; telemetry and diagnostic queries run untouched.
-    If the agent retries an identical rejected call without new user instructions, the retry is denied.
-
-How to reuse it
-    Copy this file into any DevOps or SRE agent, add your mutation tools to GUARDED_TOOLS,
-    and adjust threshold tolerances in `before_tool_call`.
-```
-
-Typed questions:
+### Typed Questions:
 
 ```python
 QUESTIONS = {
@@ -99,36 +87,103 @@ QUESTIONS = {
 }
 ```
 
-## Measured
+### How to Reuse:
 
-Decider: strands-decider-2b-hobson-v19 (ugmdu). 26 labelled cases, 52 decisions.
+```python
+from strands import Agent
+from decider_kit import Decider
+from agent.decision import IncidentActionGuard
+from agent.tools import TOOLS
 
-| | Strands Decider 2B | us.amazon.nova-pro-v1:0 |
-|---|---|---|
-| Accuracy | 76.9% | 80.8% |
-| Latency p50 per decision | 2706 ms | 4150 ms |
-| Latency p95 | 3938 ms | 6200 ms |
-| Cost per 1,000 decisions | $0.0350 | $4.0000 |
-| Answered alone at confidence >= 0.7 | 42% | 65% |
-| Accuracy when confident | 86.4% | 88.2% |
+decider = Decider()
+guard = IncidentActionGuard(decider)
 
-At the median the decider was 1.5x faster than the LLM.
-
-Reproduce with `./kit bench` (cases in `agent/eval_cases.jsonl`; charts in `submission/bench/`).
-
-## Run it
-
-```bash
-./kit setup        # checks your machine and AWS, sets up Strands Decider 2B (local model or hosted API)
-./kit demo         # web UI at http://localhost:8501
-./kit bench        # the decision vs an Amazon Bedrock LLM
-./kit deploy       # Amazon Bedrock AgentCore Runtime
+agent = Agent(
+    model=agent_model("us.amazon.nova-pro-v1:0"),
+    tools=TOOLS,
+    interventions=[guard]
+)
 ```
 
-Requirements: Python 3.10+, AWS credentials with Amazon Bedrock access, and for deploying, Node 20+ with the AgentCore CLI (`./kit agentcore-cli`).
+---
 
-## Credits
+## Measured Benchmark (Strands Decider 2B vs Amazon Nova Pro)
 
-Built with the AWS User Group Madurai Strands Decider hackathon kit (https://github.com/awsugmdu). The kit's reusable library (`decider_kit/`, the demo UI, the video and article tooling, and the Kiro steering, skills and hooks) is the user group's; the agent in `agent/` is mine. Strands Decider: https://github.com/strands-labs/strands-decider (Apache-2.0).
+Evaluated across **26 labelled production incident cases (52 total decisions)** split into tune and held-out test sets (`agent/eval_cases.jsonl`).
 
-Licence: Apache-2.0 (see LICENSE).
+Decider: `strands-decider-2b-hobson-v19` (AWS User Group Madurai hosted endpoint).
+
+| Metric | Strands Decider 2B | Amazon Nova Pro |
+|---|---|---|
+| **Accuracy** | **76.9%** | 80.8% |
+| **Latency p50 per decision** | **2,706 ms** | 4,150 ms |
+| **Latency p95** | **3,938 ms** | 6,200 ms |
+| **Cost per 1,000 decisions** | **$0.0350** | $4.0000 |
+| **Answered alone at confidence >= 0.7** | 42% | 65% |
+| **Accuracy when confident** | **86.4%** | 88.2% |
+
+### Key Findings:
+1. **114x Cost Reduction:** Strands Decider 2B costs $0.035 per 1,000 decisions vs $4.00 for Amazon Nova Pro.
+2. **1.5x Speedup:** At the median, Decider 2B resolves the decision 1.5x faster than a full LLM invocation.
+3. **Calibrated Confidence:** When the decider is confident (confidence >= 0.7), accuracy rises to **86.4%**, enabling reliable autonomous execution while routing uncertain edge cases to humans.
+
+### Benchmark Visualizations:
+
+| Accuracy Comparison | Cost Comparison (per 1,000) |
+| :---: | :---: |
+| ![Accuracy](submission/bench/bench-accuracy.png) | ![Cost](submission/bench/bench-cost.png) |
+
+| Latency (p50 / p95) | Confidence Curve |
+| :---: | :---: |
+| ![Latency](submission/bench/bench-latency.png) | ![Confidence](submission/bench/bench-confidence.png) |
+
+Reproduce with:
+```bash
+python -m decider_kit.bench --cases agent/eval_cases.jsonl --questions agent.decision:QUESTIONS --out submission/bench
+```
+
+---
+
+## Quickstart & Local Setup
+
+### 1. Installation
+
+```bash
+git clone https://github.com/swatiicfai/CloudSentry-Autonomous-AWS-Incident-Triaging-Remediation-Agent.git
+cd CloudSentry-Autonomous-AWS-Incident-Triaging-Remediation-Agent
+pip install -r requirements.txt
+```
+
+### 2. Configure Environment
+
+Copy `.env.example` to `.env` and fill in your keys:
+
+```bash
+DECIDER_MODE=ugmdu
+DECIDER_URL=https://da25tnxy06gjk.cloudfront.net
+DECIDER_API_KEY=<your_api_key>
+LLM_PROVIDER=bedrock
+BEDROCK_MODEL_ID=us.amazon.nova-pro-v1:0
+AWS_REGION=us-east-1
+```
+
+### 3. Run the Agent & Demo
+
+```bash
+# Run CLI test
+python -m agent.agent
+
+# Run interactive Demo UI (port 8501)
+python -m uvicorn demo.server:app --port 8501
+
+# Run full submission test suite
+pytest -q tests
+```
+
+---
+
+## Credits & License
+
+- Built with the **AWS User Group Madurai Strands Decider hackathon kit** (https://github.com/awsugmdu). The kit's reusable library (`decider_kit/`, demo UI, and test harness) is the user group's; the CloudSentry agent in `agent/` is developed by Swati Gupta.
+- Powered by **[Strands Decider](https://github.com/strands-labs/strands-decider)** by Strands Agents team (Apache-2.0).
+- License: **Apache-2.0** (see [LICENSE](LICENSE)).

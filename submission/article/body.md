@@ -132,6 +132,6 @@ By registering mutating functions in `GUARDED_TOOLS`, the guardrail runs transpa
 
 ---
 
-Code: https://github.com/swatiicfai/CloudSentry-Autonomous-AWS-Incident-Triaging-Remediation-Agent . Video: https://youtu.be/CloudSentryDemo . Tags: #strands-decider-2b #guardrails
+Code: https://github.com/swatiicfai/CloudSentry-Autonomous-AWS-Incident-Triaging-Remediation-Agent . Video: https://youtu.be/ZJFkwn4AZsE . Tags: #strands-decider-2b #guardrails
 
 Built with the AWS User Group Madurai Strands Decider hackathon kit
